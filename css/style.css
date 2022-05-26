@@ -1,0 +1,114 @@
+/* imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
+
+
+/* variables */
+
+:root {
+    --principal: #ffffff;
+    --secundario: #000000;
+    --hover: #f17373;
+    --bg-principal: #343334;
+    --bg-secundario: #199afc;
+    --font-primary:'Inter', sans-serif;
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* Contenedor */
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* Body */
+
+body {
+    background: var(--bg-principal);
+    font-family: var(--font-primary);
+    display: grid;
+    grid-template-rows: 15vh 40vh 33vh 5vh;
+    gap: 2vh;
+    color: var(--principal);
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    height: 5vh;
+    grid-row: 1 / 2;
+    display: flex;
+}
+
+.nav {
+    margin: 4vh auto;
+}
+
+/* main */
+
+.main {
+    grid-row: 2 / 3;
+    display: flex;
+    flex-flow: column wrap;
+    width: 40%;
+    align-items: center;
+    text-align: center;
+}
+
+.main_item{
+    display: block;
+}
+
+.form__input{
+    display: block;
+    margin: 2vh;
+    font-size: 2em;
+}
+
+label input{
+    display: block;
+    width: 100%;
+}
+
+.form__button {
+    width: 70%;
+    height: 5vh;
+    border: solid 2px var(--principal);
+    border-radius: 20px;
+    font-size: 1.5em;
+    background-color: var(--bg-secundario);
+    color: var(--principal);
+}
+
+.form__button:hover {
+    cursor: pointer;
+}
+
+
+/* seccion activitys */
+
+.activitys {
+    grid-row: 3 / 4;
+    text-align: center;
+}
+
+/* footer */
+
+.footer {
+    text-align: center;
+}

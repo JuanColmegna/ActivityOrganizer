@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActivityOrganizer</title>
+    <link rel="shortcut icon" href="./public/img/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<!-- header -->
+    <header class="header container">
+        <nav class="nav">
+            <img src="./public/img/logo.png" alt="Logo Activity Organizer">
+        </nav>
+    </header>
+<!-- main -->
+    <main class="main container">
+            <h1 class="main__title main_item">COMPLETE THE FORM TO AGEND ACTIVITYS</h1>
+            <form action="post" class="form main_item">
+                <label for="day" class="form__input"> DAY FOR ACTIVITY
+                    <input type="date" class="form__day">
+                </label>
+                <label for="hour" class="form__input"> HOUR FOR ACTIVITY
+                    <input type="number" class="form__hour" min="0" max="24">
+                </label>
+                <label for="description" class="form__input"> DESCRIPTION FOR ACTIVITY
+                    <input type="text" class="form__description">
+                </label>
+                <input type="submit" value="ADD ACTIVITY NOW" class="form__button">
+            </form>
+    </main>
+    <section class="activitys container">
+        <div class="activitys_list">
+            <h2 class="list_tittle">Activity List:</h2>
+        </div>
+        <!-- aquí la idea sería crear elementos html con js que contengan la información de los objetos "Actividades" -->
+        <p>You have nothing to do</p>
+    </section>
+
+<!-- footer -->
+    <footer class="footer">
+        <p>ActivityOrganizer | All rights reserved</p>
+    </footer>
+</body>
+</html>
