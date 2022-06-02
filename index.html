@@ -18,31 +18,32 @@
     </header>
 <!-- main -->
     <main class="main container">
-            <h1 class="main__title main_item">COMPLETE THE FORM TO AGEND ACTIVITYS</h1>
-            <form action="post" class="form main_item">
-                <label for="day" class="form__input"> DAY FOR ACTIVITY
-                    <input type="date" class="form__day">
+            <h1 class="main-item">Complete the form to add activitys</h1>
+            <form class="form main-item">
+                <label for="day" class="form-input"> day for activity
+                    <input type="date" class="form-day" id="day">
                 </label>
-                <label for="hour" class="form__input"> HOUR FOR ACTIVITY
-                    <input type="number" class="form__hour" min="0" max="24">
+                <label for="hour" class="form-input"> hour for activity
+                    <input type="time" class="form-hour" id="hour">
                 </label>
-                <label for="description" class="form__input"> DESCRIPTION FOR ACTIVITY
-                    <input type="text" class="form__description">
+                <label for="description" class="form-input"> description for activity
+                    <input type="text" class="form-description" placeholder="description" id="description">
                 </label>
-                <input type="submit" value="ADD ACTIVITY NOW" class="form__button">
+                <button class="form-button" id="button"> add activitys </button>
             </form>
     </main>
     <section class="activitys container">
-        <div class="activitys_list">
-            <h2 class="list_tittle">Activity List:</h2>
+        <div class="activitys-list">
+            <h2 class="list-tittle">Activity List:</h2>
         </div>
-        <!-- aquí la idea sería crear elementos html con js que contengan la información de los objetos "Actividades" -->
-        <p>You have nothing to do</p>
+        <ul class="list-events" id="list">
+        </ul>
     </section>
-
 <!-- footer -->
     <footer class="footer">
         <p>ActivityOrganizer | All rights reserved</p>
     </footer>
+<!-- scripts -->
+    <script src="./js/miarchivo.js"></script>
 </body>
 </html>

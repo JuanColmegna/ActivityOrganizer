@@ -11,6 +11,7 @@
     --hover: #f17373;
     --bg-principal: #343334;
     --bg-secundario: #199afc;
+    --bg-forinputs: #c4c4c4;
     --font-primary:'Inter', sans-serif;
 }
 
@@ -63,29 +64,36 @@ body {
 
 .main {
     grid-row: 2 / 3;
-    display: flex;
-    flex-flow: column wrap;
-    width: 40%;
+    display: grid;
+    grid-auto-flow: row;
+    width: 30%;
     align-items: center;
     text-align: center;
 }
 
-.main_item{
+.main-item{
     display: block;
 }
 
-.form__input{
+.form-input{
     display: block;
     margin: 2vh;
     font-size: 2em;
+    text-transform: uppercase;
 }
 
 label input{
+    font-size: 1em;
     display: block;
-    width: 100%;
+    width: 70%;
+    text-align: center;
+    background-color: var(--bg-forinputs);
+    border-style: none;
+    border-radius: 20px;
+    margin: 0 auto;
 }
 
-.form__button {
+.form-button {
     width: 70%;
     height: 5vh;
     border: solid 2px var(--principal);
@@ -93,9 +101,10 @@ label input{
     font-size: 1.5em;
     background-color: var(--bg-secundario);
     color: var(--principal);
+    text-transform: uppercase;
 }
 
-.form__button:hover {
+.form-button:hover {
     cursor: pointer;
 }
 
@@ -105,7 +114,9 @@ label input{
 .activitys {
     grid-row: 3 / 4;
     text-align: center;
+    width: 40%;
 }
+
 
 /* footer */
 
