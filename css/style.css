@@ -9,6 +9,7 @@
     --principal: #ffffff;
     --secundario: #000000;
     --hover: #f17373;
+    --delete: #8d4d4da9;
     --bg-principal: #343334;
     --bg-secundario: #199afc;
     --bg-forinputs: #c4c4c4;
@@ -27,6 +28,16 @@
 
 html {
     font-size: 62.5%;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #2e2c2c;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(29, 28, 27); 
+    background-image: -webkit-linear-gradient(90deg,rgba(255, 255, 255, .2),rgba(255, 255, 255, .2) 50%,rgba(255, 255, 255, .2) 75%)
 }
 
 /* Contenedor */
@@ -94,8 +105,8 @@ label input{
 }
 
 .form-button {
-    width: 70%;
-    height: 5vh;
+    width: 50%;
+    height: 4vh;
     border: solid 2px var(--principal);
     border-radius: 20px;
     font-size: 1.5em;
@@ -115,7 +126,26 @@ label input{
     grid-row: 3 / 4;
     text-align: center;
     width: 40%;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+
+.list-events li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2rem;
+    margin: 5px auto;
+    border: solid 1px var(--principal);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.list-events li:hover {
+    background-color: var(--delete);
+}
+
 
 
 /* footer */
@@ -123,3 +153,5 @@ label input{
 .footer {
     text-align: center;
 }
+
+
