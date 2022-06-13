@@ -28,11 +28,22 @@ const crearActividad = (parentNode, actividad) =>{
     
     liActividad.classList.add("clean-activity")
 
-    // Elimina dichos elementos
+    // Elimina dichos elementos utilizando la librería SweetAlert2
     liActividad.onclick = () =>{
-        ls.removeItem(actividad.id)
-        alert("You remove the activity of the day " + actividad.day + " at " + actividad.hour + " for " + actividad.description)
-        window.location.href = '/'
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You are going to delete the activity of "+ actividad.day + " at " + actividad.hour + " for " + actividad.description,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#2f353a',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                ls.removeItem(actividad.id)
+                window.location.href = '/'
+            }
+        })
     }
 
     liActividad.appendChild(dateActivity)
