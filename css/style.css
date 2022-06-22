@@ -53,7 +53,7 @@ body {
     background: var(--bg-principal);
     font-family: var(--font-primary);
     display: grid;
-    grid-template-rows: 15vh 40vh 33vh 5vh;
+    grid-template-rows: 15vh 5vh 35vh 30vh 5vh;
     gap: 2vh;
     color: var(--principal);
 }
@@ -71,10 +71,21 @@ body {
     margin: 4vh auto;
 }
 
+/* seccion outside */
+
+.weather {
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
 /* main */
 
 .main {
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     display: grid;
     grid-auto-flow: row;
     width: 30%;
@@ -123,11 +134,12 @@ label input{
 /* seccion activitys */
 
 .activitys {
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
     text-align: center;
     width: 40%;
     overflow: scroll;
     overflow-x: hidden;
+    margin-top: 2em;
 }
 
 .list-events li {

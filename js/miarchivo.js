@@ -1,3 +1,22 @@
+//API KEY
+const API_KEY = 'ac80411a51978795a765241808118988';
+
+//consigo ubicacion y utilizo un operador ternario para generar un mensaje si el usuario debe abrigarse o no según su geolocalizacion
+
+const fetchData = position => {
+    const {latitude, longitude} = position.coords;
+    fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
+        .then(response => response.json())
+        .then(data => {
+            let element = document.getElementById('weather')
+            data.main.temp < 15 ? element.innerHTML = "<p>Today is a cold day, wrap up!</p>" : "<p>It's a sun day, go out!</p>";
+        })
+}
+
+const onLoad = () => {
+    navigator.geolocation.getCurrentPosition(fetchData)
+}
+
 /*  Funcion:
 Guarda la actividad en el local Storage y recarga de forma forzada al html */
 const agregarActividad = (ls, actividad) =>{
@@ -54,7 +73,6 @@ const crearActividad = (parentNode, actividad) =>{
 } 
 
 // Obtengo datos del html y los guardo en variables y constantes
-
 let day = document.querySelector('.form-day');
 let hour = document.querySelector('.form-hour');
 let description = document.querySelector('.form-description');
