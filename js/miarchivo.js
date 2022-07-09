@@ -9,7 +9,7 @@ const fetchData = position => {
         .then(response => response.json())
         .then(data => {
             let element = document.getElementById('weather')
-            data.main.temp < 15 ? element.innerHTML = "<p>Today is a cold day, wrap up!</p>" : "<p>It's a sun day, go out!</p>";
+            data.main.temp < 15 ? element.innerHTML = "<p>Today is a cold day, wrap up!</p>" : element.innerHTML = "<p>It's a sun day, go out!</p>";
         })
 }
 
@@ -45,8 +45,9 @@ const crearActividad = (parentNode, actividad) =>{
     dateActivity.innerHTML = actividad.day
     descriptionActivity.innerHTML = actividad.description
     
-    liActividad.classList.add("clean-activity")
-
+    liActividad.classList.add("activity")
+    descriptionActivity.classList.add("description-activity")
+    dateActivity.classList.add("date-activity")
     // Elimina dichos elementos utilizando la librería SweetAlert2
     liActividad.onclick = () =>{
         Swal.fire({
@@ -82,15 +83,25 @@ let listadoActividades = document.querySelector('.list-events');
 // Guardo al local storage en una constante
 const ls = window.localStorage;
 
+
 // Evento producido por realizar click en el boton
 bttnAgregarActividad.onclick = () =>{
-    let actividad = {
-        id: Math.random(1, 100),
-        day: day.value,
-        hour: hour.value,
-        description: description.value,
+    if (day.value == '' || hour.value == '' || description.value == ''){
+        Swal.fire(
+            'Are you problems whit the form?',
+            'Complete all the fields!',
+            'question').then((result) => {
+                window.location.href = '/';
+            })
+    } else {
+        let actividad = {
+            id: Math.random(1, 100),
+            day: day.value,
+            hour: hour.value,
+            description: description.value,
+        }
+        agregarActividad(ls, actividad);
     }
-    agregarActividad(ls, actividad);
 }
 
 actividadesCargadas(ls, listadoActividades);
