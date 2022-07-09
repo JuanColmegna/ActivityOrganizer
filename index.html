@@ -13,7 +13,10 @@
 <!-- header -->
     <header class="header container">
         <nav class="nav">
-            <img src="./public/img/logo.png" alt="Logo Activity Organizer">
+            <div class="logo">
+                <img src="./public/img/logo1.png" alt="logo Activity Organizer" class="logo-imagen">
+                <p class="logo-texto">Activity Organizer</p>
+            </div>
         </nav>
     </header>
 <!-- outside -->
@@ -25,13 +28,13 @@
             <h1 class="main-item">Complete the form to add activitys</h1>
             <form class="form main-item">
                 <label for="day" class="form-input"> day for activity
-                    <input type="date" class="form-day" id="day">
+                    <input type="date" class="form-day" id="day" required>
                 </label>
                 <label for="hour" class="form-input"> hour for activity
-                    <input type="time" class="form-hour" id="hour">
+                    <input type="time" class="form-hour" id="hour" required>
                 </label>
                 <label for="description" class="form-input"> description for activity
-                    <input type="text" class="form-description" placeholder="description" id="description">
+                    <input type="text" class="form-description" placeholder="description" id="description" required>
                 </label>
                 <button class="form-button" id="button"> add activitys </button>
             </form>

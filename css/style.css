@@ -43,7 +43,7 @@ html {
 /* Contenedor */
 
 .container {
-    max-width: 1080px;
+    width: min(90%, 1080px);
     margin: 0 auto;
 }
 
@@ -52,103 +52,116 @@ html {
 body {
     background: var(--bg-principal);
     font-family: var(--font-primary);
-    display: grid;
-    grid-template-rows: 15vh 5vh 35vh 30vh 5vh;
-    gap: 2vh;
     color: var(--principal);
 }
 
 /* header */
 
 .header {
-    width: 100%;
-    height: 5vh;
-    grid-row: 1 / 2;
-    display: flex;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 .nav {
-    margin: 4vh auto;
+    margin: 2rem;
+    font-weight: bold;
 }
+
 
 /* seccion outside */
 
 .weather {
-    grid-row: 2 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 3em;
     text-transform: uppercase;
+    color: var(--hover);
+    font-weight: bold;
 }
 
 /* main */
 
 .main {
-    grid-row: 3 / 4;
-    display: grid;
-    grid-auto-flow: row;
-    width: 30%;
-    align-items: center;
+    width: 90%;
     text-align: center;
+}
+
+@media (min-width: 480px) {
+    .main{
+        width: 70%;
+    }
+}
+
+@media (min-width: 780px) {
+    .main{
+        width: 40%;
+    }
 }
 
 .main-item{
-    display: block;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: normal;
 }
 
 .form-input{
+    margin: 2rem 0;
     display: block;
-    margin: 2vh;
-    font-size: 2em;
     text-transform: uppercase;
+    font-size: 1.5rem;
 }
 
 label input{
-    font-size: 1em;
     display: block;
-    width: 70%;
+    width: 100%;
+    height: 3rem;
+    color: var(--secundario);
+    font-weight: bold;
+    text-transform: uppercase;
     text-align: center;
-    background-color: var(--bg-forinputs);
-    border-style: none;
-    border-radius: 20px;
-    margin: 0 auto;
 }
 
 .form-button {
-    width: 50%;
-    height: 4vh;
-    border: solid 2px var(--principal);
+    width: 100%;
+    height: 3rem;
     border-radius: 20px;
-    font-size: 1.5em;
     background-color: var(--bg-secundario);
-    color: var(--principal);
     text-transform: uppercase;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
 }
 
 .form-button:hover {
-    cursor: pointer;
+    color: var(--principal);
+    border: solid 2px var(--principal);
 }
 
 
 /* seccion activitys */
 
 .activitys {
-    grid-row: 4 / 5;
     text-align: center;
-    width: 40%;
-    overflow: scroll;
-    overflow-x: hidden;
+    width: 90%;
     margin-top: 2em;
+}
+
+@media (min-width: 480px) {
+    .activitys {
+        width: 70%;
+    }
+}
+
+@media (min-width: 768px) {
+    .activitys{
+        width: 40%;
+    }
 }
 
 .list-events li {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     font-size: 2rem;
     margin: 5px auto;
-    border: solid 1px var(--principal);
     border-radius: 5px;
     cursor: pointer;
     transition: all .3s ease-in-out;
@@ -157,8 +170,6 @@ label input{
 .list-events li:hover {
     background-color: var(--delete);
 }
-
-
 
 /* footer */
 
